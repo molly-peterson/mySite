@@ -35,19 +35,19 @@ function drawTable() {
     var tbl = "<table class=\"table-hover\">";
 
     // create a new row on each iteration of outer loop
-    for(var i= cStart-1; i <= cEnd; i++) {
+    for(var i= rStart-1; i <= rEnd; i++) {
         tbl += "<tr>";
 
         // fill in each row on each iteration of inner loop
-        for(var j= rStart-1; j <= rEnd; j++) {
+        for(var j= cStart-1; j <= cEnd; j++) {
 
-            if(i == cStart-1 && j == rStart-1) {
+            if(i == rStart-1 && j == cStart-1) {
                 // add an empty cell in top left
                 tbl += "<td></td>";
-            }else if(i == cStart-1 && (j >= rStart-1 || j <= rEnd)) {
+            }else if(i == rStart-1 && (j >= cStart-1 || j <= cEnd)) {
                 // add the column range
                 tbl += "<td id=\"tbl_h\">" + j + "</td>";
-            } else if(j == rStart-1 && (i >= cStart-1 || i <= cEnd)) {
+            } else if(j == cStart-1 && (i >= rStart-1 || i <= rEnd)) {
                 // add the rows range
                 tbl += "<td id=\"tbl_h\">" + i + "</td>";
             } else {
