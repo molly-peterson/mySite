@@ -44,10 +44,10 @@ function drawTable() {
             if(i == cStart-1 && j == rStart-1) {
                 // add an empty cell in top left
                 tbl += "<td></td>";
-            }else if(i == cStart-1 && (j > rStart-1 || j <= rEnd)) {
+            }else if(i == cStart-1 && (j >= rStart-1 || j <= rEnd)) {
                 // add the column range
                 tbl += "<td id=\"tbl_h\">" + j + "</td>";
-            } else if(j == rStart-1 && (i > cStart-1 || i <= cEnd)) {
+            } else if(j == rStart-1 && (i >= cStart-1 || i <= cEnd)) {
                 // add the rows range
                 tbl += "<td id=\"tbl_h\">" + i + "</td>";
             } else {
