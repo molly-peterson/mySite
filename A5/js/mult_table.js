@@ -23,6 +23,7 @@ function getInput() {
     rEnd = document.getElementById('rEnd').value;
 
     isMinMax();
+    if(isInRange() == 0) { return; }
     drawTable();
 }
 /*
@@ -80,4 +81,24 @@ function isMinMax() {
         rStart = temp;
     }
     return;
+}
+/*
+    This function has a boolean return and takes no arguments. This is to ensure
+    that the numbers fall within a limited range of -50 - 50.
+*/
+function isInRange() {
+    if(cEnd < -50 || cEnd > 50) {
+        return 0;
+    }
+    if(cStart < -50 || cStart > 50) {
+        return 0;
+    }
+    if(rStart < -50 || rStart > 50) {
+        return 0;
+    }
+    if(rEnd < -50 || rEnd > 50) {
+        return 0;
+    }
+
+    return 1;
 }
