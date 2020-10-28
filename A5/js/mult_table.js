@@ -35,19 +35,19 @@ function drawTable() {
     var tbl = "<table class=\"table-hover\">";
 
     // create a new row on each iteration of outer loop
-    for(var i= rStart-1; i <= rEnd; i++) {
+    for(var i= (rStart-1); i <= rEnd; i++) {
         tbl += "<tr>";
 
         // fill in each row on each iteration of inner loop
-        for(var j= cStart-1; j <= cEnd; j++) {
+        for(var j= (cStart-1); j <= cEnd; j++) {
 
-            if(i == rStart-1 && j == cStart-1) {
+            if((i == (rStart-1)) && (j == (cStart-1))) {
                 // add an empty cell in top left
                 tbl += "<td></td>";
-            }else if(i == rStart-1 && (j >= cStart-1 || j <= cEnd)) {
+            }else if((i == (rStart-1)) && ((j > (cStart-1)) || (j <= cEnd))) {
                 // add the column range
                 tbl += "<td id=\"tbl_h\">" + j + "</td>";
-            } else if(j == cStart-1 && (i >= rStart-1 || i <= rEnd)) {
+            } else if((j == (cStart-1)) && ((i > (rStart-1)) || (i <= rEnd))) {
                 // add the rows range
                 tbl += "<td id=\"tbl_h\">" + i + "</td>";
             } else {
@@ -80,23 +80,22 @@ function isMinMax() {
         rEnd = rStart;
         rStart = temp;
     }
-    return;
 }
 /*
     This function has a boolean return and takes no arguments. This is to ensure
     that the numbers fall within a limited range of -50 - 50.
 */
 function isInRange() {
-    if(cEnd < -50 || cEnd > 50) {
+    if((cEnd < -50) || (cEnd > 50)) {
         return 0;
     }
-    if(cStart < -50 || cStart > 50) {
+    if((cStart < -50) || (cStart > 50)) {
         return 0;
     }
-    if(rStart < -50 || rStart > 50) {
+    if((rStart < -50) || (rStart > 50)) {
         return 0;
     }
-    if(rEnd < -50 || rEnd > 50) {
+    if((rEnd < -50) || (rEnd > 50)) {
         return 0;
     }
 
