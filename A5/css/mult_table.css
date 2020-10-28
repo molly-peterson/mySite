@@ -1,0 +1,39 @@
+/*
+    Molly Peterson, molly_peterson@student.uml.edu
+    University of Massachusetts Lowell, COMP 4610 GUI I
+    Task: Interactive Mult table
+    File: www.github.com/molly-peterson/mySite/A5/css/mult_table.css
+    created: Oct 28, 2020 @ 8 PM
+*/
+
+body {
+    background-color: gray;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+h2 {
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.the_table {
+    max-width: 100%;
+    max-height: 100%;
+    margin:5px;
+    margin-top: 30px;
+    overflow: scroll;
+}
+
+table, td {
+    margin: auto;
+    table-layout: fixed;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    width: 50px;
+}
+
+#tbl_h {
+    background-color: green;
+}
