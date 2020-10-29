@@ -17,10 +17,10 @@ var cStart, cEnd, hStart, hEnd;
 */
 function getInput() {
     // read in values from form, form checks for number input on its own
-    cStart = document.getElementById('cStart').value;
-    cEnd = document.getElementById('cEnd').value;
-    rStart = document.getElementById('rStart').value;
-    rEnd = document.getElementById('rEnd').value;
+    cStart = parseInt(document.getElementById('cStart').value, 10);
+    cEnd = parseInt(document.getElementById('cEnd').value, 10);
+    rStart = parseInt(document.getElementById('rStart').value, 10);
+    rEnd = parseInt(document.getElementById('rEnd').value, 10);
 
     isMinMax();
     if(isInRange() == 0) { return; }
@@ -32,7 +32,7 @@ function getInput() {
     data.
 */
 function drawTable() {
-    var tbl = "<table class=\"table-hover\">";
+    var tbl = "<table class=\"table-striped\">";
 
     // create a new row on each iteration of outer loop
     for(var i= (rStart-1); i <= rEnd; i++) {
