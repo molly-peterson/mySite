@@ -8,7 +8,7 @@
 */
 
 // variables for holding form data
-var cStart, cEnd, hStart, hEnd;
+var cStart, cEnd, rStart, rEnd;
 /*
     The getInput function takes no arguments and has no returns. This function
     is called by the click of the submit button on the form and takes in the
