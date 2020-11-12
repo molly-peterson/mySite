@@ -37,3 +37,9 @@ table, td {
 #tbl_h {
     background-color: green;
 }
+
+label.error {
+    color: red;
+    display: block;
+    margin-top: 5px;
+}
