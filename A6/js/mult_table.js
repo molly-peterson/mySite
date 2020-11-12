@@ -23,26 +23,26 @@ $().ready(function() {
             cStart: {
                 required: true,
                 range: [-50,50],
-                numbers: true
+                integer: true
             },
             // set requirements for column end input
             cEnd: {
                 required: true,
                 range: [-50,50],
-                numbers: true,
+                integer: true,
                 max: [cStart]
             },
             // set requirements for row start input
             rStart: {
                 required: true,
                 range: [-50,50],
-                numbers: true
+                integer: true
             },
             // set requirements for row end input
             rEnd: {
                 required: true,
                 range: [-50,50],
-                numbers: true,
+                integer: true,
                 max: [rStart]
             }
         },
@@ -50,23 +50,25 @@ $().ready(function() {
         messages: {
             cStart: {
                 required: "A column start value is required",
-                digits: "The value of column start input must be a digit",
+                integer: "The value of column start input must be an integer",
                 range: "You must input a digit between -50 and 50"
             },
             cEnd: {
                 required: "A column end value is required",
-                digits: "The value of column end input must be a digit",
-                range: "You must input a digit between -50 and 50"
+                integer: "The value of column end input must be an integer",
+                range: "You must input a digit between -50 and 50",
+                max: $("#cStart").val()
             },
             rStart: {
                 required:  "A row start value is required",
-                digits: "The value of row start input must be a digit",
+                integer: "The value of row start input must be an integer",
                 range: "You must input a digit between -50 and 50"
             },
             rEnd: {
                 required: "A row end value is required",
-                digits: "The value of row end input must be a digit",
-                range: "You must input a digit between -50 and 50"
+                integer: "The value of row end input must be an integer",
+                range: "You must input a digit between -50 and 50",
+                max: $("#rStart").val()
             }
         },
 
@@ -75,10 +77,6 @@ $().ready(function() {
         }
     })
 })
-
-jQuery.validator.addMethod("numbers", function(value, element) {
-    return this.optional(element) || ^\-?[1-9]\d{0,2}$.test(value);
-}, "Please enter a positive or negative whole number");
 
 // function for validation of max greater than min
 jQuery.validator.addMethod("max", function(value, element, params) {
