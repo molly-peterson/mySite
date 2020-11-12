@@ -30,7 +30,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 integer: true,
-                max: [cStart]
+                max: $("#cStart").val()
             },
             // set requirements for row start input
             rStart: {
@@ -43,7 +43,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 integer: true,
-                max: [rStart]
+                max: $("#rStart").val()
             }
         },
 
@@ -56,8 +56,7 @@ $().ready(function() {
             cEnd: {
                 required: "A column end value is required",
                 integer: "The value of column end input must be an integer",
-                range: "You must input a digit between -50 and 50",
-                max: $("#cStart").val()
+                range: "You must input a digit between -50 and 50"
             },
             rStart: {
                 required:  "A row start value is required",
@@ -67,8 +66,7 @@ $().ready(function() {
             rEnd: {
                 required: "A row end value is required",
                 integer: "The value of row end input must be an integer",
-                range: "You must input a digit between -50 and 50",
-                max: $("#rStart").val()
+                range: "You must input a digit between -50 and 50"
             }
         },
 
