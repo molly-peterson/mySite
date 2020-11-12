@@ -46,6 +46,12 @@ $().ready(function() {
                 max: [$("#rStart").val()]
             }
         },
+        
+        
+        errorElement: "div",
+        errorPlacement: function(error, element) {
+                element.after(error);
+        },
 
         messages: {
             cStart: {
