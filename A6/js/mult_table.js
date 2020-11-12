@@ -30,7 +30,7 @@ $().ready(function() {
                 required: true,
                 digits: true,
                 range: [-50,50],
-                max: [cStart, cEnd]
+                max: [cStart]
             },
             // set requirements for row start input
             rStart: {
@@ -43,7 +43,7 @@ $().ready(function() {
                 required: true,
                 digits: true,
                 range: [-50,50],
-                max: [rStart, rEnd]
+                max: [rStart]
             }
         },
 
@@ -78,7 +78,7 @@ $().ready(function() {
 
 // function for validation of max greater than min
 jQuery.validator.addMethod("max", function(value, element, params) {
-    return this.optional(element) || value == params[0] < params[1];
+    return this.optional(element) || value > param[0];
 }, "The max value must be greater than the min value");
 
 function getInput() {
