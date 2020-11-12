@@ -69,6 +69,10 @@ $().ready(function() {
                 digits: "The value of row end input must be a digit",
                 range: "You must input a digit between -50 and 50"
             }
+        },
+
+        submitHandler: function(form) {
+            form.submit();
         }
     })
 })
