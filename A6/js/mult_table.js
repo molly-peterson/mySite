@@ -57,7 +57,6 @@ $().ready(function() {
                 required: "A column end value is required",
                 digits: "The value of column end input must be a digit",
                 range: "You must input a digit between -50 and 50"
-                }
             },
             rStart: {
                 required:  "A row start value is required",
