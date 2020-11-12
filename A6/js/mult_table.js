@@ -23,7 +23,7 @@ $().ready(function() {
             cStart: {
                 required: true,
                 digits: true,
-                range: [-50,50],
+                range: [-50,50]
             },
             // set requirements for column end input
             cEnd: {
