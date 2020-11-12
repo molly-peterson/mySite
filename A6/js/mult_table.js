@@ -22,27 +22,27 @@ $().ready(function() {
             // set requirements for column start input
             cStart: {
                 required: true,
-                digits: true,
-                range: [-50,50]
+                range: [-50,50],
+                numbers: true
             },
             // set requirements for column end input
             cEnd: {
                 required: true,
-                digits: true,
                 range: [-50,50],
+                numbers: true,
                 max: [cStart]
             },
             // set requirements for row start input
             rStart: {
                 required: true,
-                digits: true,
-                range: [-50,50]
+                range: [-50,50],
+                numbers: true
             },
             // set requirements for row end input
             rEnd: {
                 required: true,
-                digits: true,
                 range: [-50,50],
+                numbers: true,
                 max: [rStart]
             }
         },
@@ -75,6 +75,10 @@ $().ready(function() {
         }
     })
 })
+
+jQuery.validator.addMethod("numbers", function(value, element) {
+    return this.optional(element) || ^\-?[1-9]\d{0,2}$.test(value);
+}, "Please enter a positive or negative whole number");
 
 // function for validation of max greater than min
 jQuery.validator.addMethod("max", function(value, element, params) {
