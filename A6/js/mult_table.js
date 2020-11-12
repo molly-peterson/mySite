@@ -30,7 +30,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 integer: true,
-                max: $("#cStart").val()
+                max: [$("#cStart").val()]
             },
             // set requirements for row start input
             rStart: {
@@ -43,7 +43,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 integer: true,
-                max: $("#rStart").val()
+                max: [$("#rStart").val()]
             }
         },
 
