@@ -9,6 +9,8 @@
 
 // variables for holding form data
 var cStart, cEnd, rStart, rEnd;
+cStart = $("#cStart");
+rStart = $("#rStart");
 /*
     The getInput function takes no arguments and has no returns. This function
     is called by the click of the submit button on the form and takes in the
@@ -23,31 +25,31 @@ $().ready(function() {
             cStart: {
                 required: true,
                 range: [-50,50],
-                integer: true
+                digit: true
             },
             // set requirements for column end input
             cEnd: {
                 required: true,
                 range: [-50,50],
-                integer: true,
-                max: [$("#cStart").val(), $("#cEnd").val()]
+                digit: true,
+                max: cStart.val()
             },
             // set requirements for row start input
             rStart: {
                 required: true,
                 range: [-50,50],
-                integer: true
+                digit: true
             },
             // set requirements for row end input
             rEnd: {
                 required: true,
                 range: [-50,50],
-                integer: true,
-                max: [$("#rStart").val(), $("#rEnd").val()]
+                digit: true,
+                max: rStart.val()
             }
         },
-        
-        
+
+
         errorElement: "div",
         errorPlacement: function(error, element) {
                 element.after(error);
@@ -56,22 +58,22 @@ $().ready(function() {
         messages: {
             cStart: {
                 required: "A column start value is required",
-                integer: "The value of column start input must be an integer",
+                digit: "The value of column start input must be an integer",
                 range: "You must input a digit between -50 and 50"
             },
             cEnd: {
                 required: "A column end value is required",
-                integer: "The value of column end input must be an integer",
+                digit: "The value of column end input must be an integer",
                 range: "You must input a digit between -50 and 50"
             },
             rStart: {
                 required:  "A row start value is required",
-                integer: "The value of row start input must be an integer",
+                digit: "The value of row start input must be an integer",
                 range: "You must input a digit between -50 and 50"
             },
             rEnd: {
                 required: "A row end value is required",
-                integer: "The value of row end input must be an integer",
+                digit: "The value of row end input must be an integer",
                 range: "You must input a digit between -50 and 50"
             }
         },
@@ -83,8 +85,8 @@ $().ready(function() {
 })
 
 // function for validation of max greater than min
-jQuery.validator.addMethod("max", function(value, element, params) {
-    return this.optional(element) || params[1] > params[0];
+jQuery.validator.addMethod("max", function(value, element, param) {
+    return +$(element).val() > +$(param).val();
 }, "The max value must be greater than the min value");
 
 function getInput() {
