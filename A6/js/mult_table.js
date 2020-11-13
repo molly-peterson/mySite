@@ -8,11 +8,11 @@
 */
 
 // variables for holding form data
-var cStart, cEnd, rStart, rEnd;
-cStart = $("#cStart");
-rStart = $("#rStart");
-cEnd = $("#cEnd");
-rEnd = $("#rEnd");
+var c_Start, c_End, r_Start, r_End;
+c_Start = $("#cStart");
+r_Start = $("#rStart");
+c_End = $("#cEnd");
+r_End = $("#rEnd");
 /*
     The getInput function takes no arguments and has no returns. This function
     is called by the click of the submit button on the form and takes in the
@@ -34,7 +34,7 @@ $().submit(function() {
                 required: true,
                 range: [-50,50],
                 digit: true,
-                max: parseInt(cStart.value, 10)
+                max: parseInt(c_Start.value, 10)
             },
             // set requirements for row start input
             rStart: {
@@ -47,7 +47,7 @@ $().submit(function() {
                 required: true,
                 range: [-50,50],
                 digit: true,
-                max: parseInt(rStart.value, 10)
+                max: parseInt(r_Start.value, 10)
             }
         },
 
@@ -90,10 +90,10 @@ jQuery.validator.addMethod("max", function(value, element, param) {
 
 function getInput() {
     // read in values from form, form checks for number input on its own
-    cStart = parseInt(document.getElementById('cStart').value, 10);
-    cEnd = parseInt(document.getElementById('cEnd').value, 10);
-    rStart = parseInt(document.getElementById('rStart').value, 10);
-    rEnd = parseInt(document.getElementById('rEnd').value, 10);
+    c_Start = parseInt(document.getElementById('cStart').value, 10);
+    c_End = parseInt(document.getElementById('cEnd').value, 10);
+    r_Start = parseInt(document.getElementById('rStart').value, 10);
+    r_End = parseInt(document.getElementById('rEnd').value, 10);
 
     drawTable();
 }
