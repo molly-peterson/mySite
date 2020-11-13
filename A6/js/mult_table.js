@@ -29,35 +29,37 @@ $().ready(function() {
             // set requirements for column start input
             cStart: {
                 required: true,
-                range: [-50,50],
+                min: -50,
                 digit: true,
-                max: 50
+                max: 50,
+		max_greater: false
             },
 
             // set requirements for column end input
             cEnd: {
                 required: true,
-                range: [-50,50],
+                min: -50,
                 digit: true,
                 max: 50,
-                max_greater: parseInt(c_Start.value, 10)
+                max_greater: cStart
             },
 
             // set requirements for row start input
             rStart: {
                 required: true,
-                range: [-50,50],
+                min: -50,
                 digit: true,
-                max: 50
+                max: 50,
+		max_greater: false
             },
 
             // set requirements for row end input
             rEnd: {
                 required: true,
-                range: [-50,50],
+                min: -50,
                 digit: true,
                 max: 50,
-                max_greater: parseInt(r_Start.value, 10)
+                max_greater: rStart
             }
         },
 
@@ -107,8 +109,7 @@ $().ready(function() {
 // function for validation of max greater than min
 
 jQuery.validator.addMethod("max_greater", function(value, element, param) {
-    value = parseInt(value.value, 10);
-    return this.optional(element) || value > param;
+    return +$(element).val() > +$(param[0]).val();
 }, "The max value must be greater than the min value");
 
 
