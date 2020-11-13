@@ -109,7 +109,7 @@ $().ready(function() {
 // function for validation of max greater than min
 
 jQuery.validator.addMethod("max_greater", function(value, element, param) {
-    return +$(element).val() > +$(param[0]).val();
+    return this.optional(element) || value > param;
 }, "The max value must be greater than the min value");
 
 
