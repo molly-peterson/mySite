@@ -97,7 +97,7 @@ $().ready(function() {
         },
 
         submitHandler: function(form) {
-            form.ajaxSubmit();
+            form.submit();
         }
 
     })
