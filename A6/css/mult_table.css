@@ -17,6 +17,12 @@ h2 {
     text-decoration-line: underline;
 }
 
+#input-form {
+    margin: auto;
+    width: 150px;
+
+}
+
 .the_table {
     max-width: 100%;
     max-height: 100%;
