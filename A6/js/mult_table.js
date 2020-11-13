@@ -11,13 +11,15 @@
 var cStart, cEnd, rStart, rEnd;
 cStart = $("#cStart");
 rStart = $("#rStart");
+cEnd = $("#cEnd");
+rEnd = $("#rEnd");
 /*
     The getInput function takes no arguments and has no returns. This function
     is called by the click of the submit button on the form and takes in the
     numbers submitted on that form and stores them in variables. The error
     handling and drawing table functions are also called from here.
 */
-$().ready(function() {
+$().submit(function() {
     // select the form for validation by name attribute
     $("#input-form").validate({
         rules: {
@@ -32,7 +34,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 digit: true,
-                max: cStart.val()
+                max: parseInt(cStart.value, 10)
             },
             // set requirements for row start input
             rStart: {
@@ -45,7 +47,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 digit: true,
-                max: rStart.val()
+                max: parseInt(rStart.value, 10)
             }
         },
 
@@ -86,7 +88,8 @@ $().ready(function() {
 
 // function for validation of max greater than min
 jQuery.validator.addMethod("max", function(value, element, param) {
-    return +$(element).val() > +$(param).val();
+    value = parseInt(value.value, 10);
+    return value > param;
 }, "The max value must be greater than the min value");
 
 function getInput() {
