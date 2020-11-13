@@ -35,7 +35,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 digit: true,
-				        max: false
+	        max: false
             },
 
             // set requirements for column end input
@@ -51,7 +51,7 @@ $().ready(function() {
                 required: true,
                 range: [-50,50],
                 digit: true,
-				        max: false
+		max: false
             },
 
             // set requirements for row end input
