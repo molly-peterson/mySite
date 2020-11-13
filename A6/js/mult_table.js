@@ -8,9 +8,9 @@
 */
 
 // variables for holding form data
-var cStart, cEnd, rStart, rEnd;
-cStart = $("#cStart");
-rStart = $("#rStart");
+var c_Start, c_End, r_Start, r_End;
+c_Start = $("#cStart");
+r_Start = $("#rStart");
 errortab = $("#error-tab");
 
 /*
@@ -40,7 +40,7 @@ $().ready(function() {
                 range: [-50,50],
                 digit: true,
                 max: 50,
-                max_greater: parseInt(cStart.value, 10)
+                max_greater: parseInt(c_Start.value, 10)
             },
 
             // set requirements for row start input
@@ -57,7 +57,7 @@ $().ready(function() {
                 range: [-50,50],
                 digit: true,
                 max: 50,
-                max_greater: parseInt(rStart.value, 10)
+                max_greater: parseInt(r_Start.value, 10)
             }
         },
 
@@ -116,10 +116,10 @@ jQuery.validator.addMethod("max_greater", function(value, element, param) {
 function getInput() {
 
     // read in values from form, form checks for number input on its own
-    cStart = parseInt(document.getElementById('cStart').value, 10);
-    cEnd = parseInt(document.getElementById('cEnd').value, 10);
-    rStart = parseInt(document.getElementById('rStart').value, 10);
-    rEnd = parseInt(document.getElementById('rEnd').value, 10);
+    c_Start = parseInt(document.getElementById('cStart').value, 10);
+    c_End = parseInt(document.getElementById('cEnd').value, 10);
+    r_Start = parseInt(document.getElementById('rStart').value, 10);
+    r_End = parseInt(document.getElementById('rEnd').value, 10);
 
     drawTable();
 }
@@ -134,19 +134,19 @@ function drawTable() {
     var tbl = "<table class=\"table-striped\">";
 
     // create a new row on each iteration of outer loop
-    for(var i= (rStart-1); i <= rEnd; i++) {
+    for(var i= (r_Start-1); i <= r_End; i++) {
         tbl += "<tr>";
 
         // fill in each row on each iteration of inner loop
-        for(var j= (cStart-1); j <= cEnd; j++) {
+        for(var j= (c_Start-1); j <= c_End; j++) {
 
-            if((i == (rStart-1)) && (j == (cStart-1))) {
+            if((i == (r_Start-1)) && (j == (c_Start-1))) {
                 // add an empty cell in top left
                 tbl += "<td></td>";
-            }else if((i == (rStart-1)) && ((j > (cStart-1)) || (j <= cEnd))) {
+            }else if((i == (r_Start-1)) && ((j > (c_Start-1)) || (j <= c_End))) {
                 // add the column range
                 tbl += "<td id=\"tbl_h\">" + j + "</td>";
-            } else if((j == (cStart-1)) && ((i > (rStart-1)) || (i <= rEnd))) {
+            } else if((j == (c_Start-1)) && ((i > (r_Start-1)) || (i <= r_End))) {
                 // add the rows range
                 tbl += "<td id=\"tbl_h\">" + i + "</td>";
             } else {
