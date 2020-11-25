@@ -1,1 +1,63 @@
+/*
+    Molly Peterson, molly_peterson@student.uml.edu
+    University of Massachusetts Lowell, COMP 4610 GUI I
+    Task: Using jquery UI slider and tab widgets
+    File: www.github.com/molly-peterson/mySite/A7/css/mult_table.css
+    created: Nov 12, 2020 @ 8 PM
+*/
 
+/* alter the background and page overflow */
+body {
+    background-color: gray;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+/* change the page title */
+h2 {
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+/* center the form */
+#input-form {
+    margin: auto;
+    width: 150px;
+
+}
+
+/* add some space between form inputs */
+.row {
+    margin-bottom: 30px;
+}
+
+/* adjust the table and handle overflow */
+.the_table {
+    max-width: 100%;
+    max-height: 100%;
+    margin:5px;
+    margin-top: 30px;
+    overflow: auto;
+}
+
+/* adjust the cells in the table */
+table, td {
+    margin: auto;
+    table-layout: fixed;
+    border: 1px solid black;
+    text-align: center;
+    background-color: white;
+    width: 50px;
+}
+
+/* color the headers differently */
+#tbl_h {
+    background-color: green;
+}
+
+/* attempt to style jQuery error messages */
+label.error {
+    color: red;
+    display: block;
+    margin-top: 15px;
+}
