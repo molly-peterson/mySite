@@ -4,7 +4,7 @@
     Computer Science, COMP 4610 GUI I
     Task: Using jquery Slider and Tab widgets
     File: github.com/molly-peterson/mySite/A7/js/mult_table.js
-    created: Nov 12, 2020 @ 11:00 PM
+    created: Nov 24, 2020 @ 9:00 PM
 */
 
 
@@ -29,7 +29,7 @@ $(function(){
                 + " x " + rStart + "-" + rEnd + "</a></li>"
             );
             $("#tabs").append(
-                "<div id='tab'" + num_tabs + "'>" + tbl + "</div>"
+                "<div id='tab" + num_tabs + "'>" + tbl + "</div>"
             );
             $("#tabs").tabs("refresh");
         }
