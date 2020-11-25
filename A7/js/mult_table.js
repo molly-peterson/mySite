@@ -14,7 +14,7 @@ var cStart, cEnd, rStart, rEnd;
 cStart = $("#cStart");
 rStart = $("#rStart");
 errortab = $("#error-tab");
-var the_table, num_tabs;
+var tbl, num_tabs;
 
 // code found at: https://stackoverflow.com/questions/14702631/in-jquery-ui-1-9-how-do-you-create-new-tabs-dynamically
 // this function creates the dynamic tabs as long as there are 10 or less
@@ -29,8 +29,9 @@ $(function(){
                 + " x " + rStart + "-" + rEnd + "</a></li>"
             );
             $("#tabs").append(
-                "<div id='tab'" + num_tabs + "'>" + the_table + "</div>"
+                "<div id='tab'" + num_tabs + "'>" + tbl + "</div>"
             );
+            $("#tabs").tabs("refresh");
         }
     });
 });
@@ -254,7 +255,7 @@ function getInput() {
 */
 
 function drawTable() {
-    var tbl = "<table class=\"table-striped\">";
+    tbl = "<table class=\"table-striped\">";
 
     // create a new row on each iteration of outer loop
     for(var i= (rStart-1); i <= rEnd; i++) {
