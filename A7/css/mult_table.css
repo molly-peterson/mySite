@@ -3,7 +3,7 @@
     University of Massachusetts Lowell, COMP 4610 GUI I
     Task: Using jquery UI slider and tab widgets
     File: www.github.com/molly-peterson/mySite/A7/css/mult_table.css
-    created: Nov 12, 2020 @ 8 PM
+    created: Nov 24, 2020 @ 9:30 PM
 */
 
 /* alter the background and page overflow */
@@ -60,4 +60,9 @@ label.error {
     color: red;
     display: block;
     margin-top: 15px;
+}
+
+/* fix ui tab overflow */
+.ui-tabs {
+    overflow: auto;
 }
