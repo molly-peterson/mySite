@@ -105,7 +105,7 @@ $(function() {
     $("#rStart").val($("#slider3").slider("values", 0));
 
     // set up the fourth slider for row end
-    $("slider4").slider({
+    $("#slider4").slider({
         min: -50,
         max: 50,
         step: 1,
