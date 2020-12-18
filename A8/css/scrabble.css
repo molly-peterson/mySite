@@ -1,1 +1,129 @@
+/*
+    Molly Peterson molly_peterson@student.uml.edu
+    UMass Lowell Computer Science, COMP 4610 GUI I
+    December 17, 2020
+    Task: Scrabble with Drag and Drop
+*/
 
+body{
+    background-color: #ffb3d9;
+    min-height: 1800px;
+    min-width: 800px;
+}
+
+/* Get page title centered */
+#header{
+    text-align: center;
+    margin: auto;
+}
+
+/* edit the board */
+#my_board{
+    width: 800px;
+    position: relative;
+    margin: auto;
+}
+
+#my_board > .container{
+    padding-left: 360px;
+}
+
+/* Position the tile rack */
+#tile_rack{
+    position: relative;
+    margin: auto;
+    padding-top: 30px;
+    padding-left: 360px;
+}
+
+/* Position tiles */
+#tile1{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 425px;
+    top: 625px;
+}
+
+#tile2{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 500px;
+    top: 625px;
+}
+
+#tile3{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 575px;
+    top: 625px;
+}
+
+#tile4{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 650px;
+    top: 625px;
+}
+
+#tile5{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 725px;
+    top: 625px;
+}
+
+#tile6{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 800px;
+    top: 625px;
+}
+
+#tile7{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 875px;
+    top: 625px;
+}
+
+/* position the button */
+.the_buttons{
+    width: 800px;
+    position: relative;
+    left: 275px;
+    bottom: 0;
+    margin: auto;
+    padding-top: 10px;
+}
+
+/* position the score */
+#score{
+    width: 800px;
+    position: relative;
+    margin: auto;
+    padding-top: 5px;
+    padding-left: 360px;
+}
+
+#score > p{
+    font-size: 20px;
+}
+
+#score_total{
+    width: 800px;
+    position: relative;
+    margin: auto;
+    padding-top: 5px;
+    padding-left: 380px;
+}
+
+#score_total > p{
+    font-size: 20px;
+}
