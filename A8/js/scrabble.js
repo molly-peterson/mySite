@@ -190,7 +190,7 @@ function random_hand() {
             },
             // attempt to keep the letters only in the board
             containment: '#my_board',
-            snap: '.my_board'
+            snap: '.droppable'
         });
 
         // create drop spaces for all the board spaces
@@ -198,8 +198,8 @@ function random_hand() {
         $("#droppable1").droppable({
             drop: function(event, ui) {
                 // assign the tile from drag object to global var
-                console.log(slot1_tile);
-                slot1_tile = my_drag_object;
+
+                $(ui.draggable).detach().css({top: 0, left: 0}).appendTo(this);
                 $(this)
                 .find("p")
                     .html(my_drag_object);
