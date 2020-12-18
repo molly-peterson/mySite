@@ -174,7 +174,7 @@ function random_hand() {
         // pick the correct image of tile selected
         temp_html = temp_html + "<div id=\"tile" + i + "\" class=\"draggable ui-draggable ui-draggable-handle\" name=\"" + tile_type + "\">";
         temp_html = temp_html + "<img id=\"" + tile_type + "\" src=\"img/" + tile_type + ".jpg\"";
-        temp_html = temp_html + "width = \"50\"/></div>";
+        temp_html = temp_html + "width = \"60\"/></div>";
     }
 
     // add tile to the page
@@ -190,7 +190,8 @@ function random_hand() {
             },
             // attempt to keep the letters only in the board
             containment: '#my_board',
-            snap: '.droppable'
+            snap: '.droppable',
+            snapMode: 'inner'
         });
 
         // create drop spaces for all the board spaces
